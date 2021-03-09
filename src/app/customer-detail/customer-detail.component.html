@@ -1,0 +1,30 @@
+<div *ngIf="customer">
+  <h2>{{ customer.name }} Details</h2>
+  <div><span>id: </span>{{ customer.id }}</div>
+  <div><span>name: </span>{{ customer.name }}</div>
+  <div><span>email: </span>{{ customer.email }}</div>
+  <div><span>house: </span>{{ customer.house }}</div>
+  <div><span>street: </span>{{ customer.street }}</div>
+  <div><span>city: </span>{{ customer.city }}</div>
+  <div><span>zip: </span>{{ customer.zip }}</div>
+  <hr />
+  <div>
+    <label for="name">Full name: </label>
+    <input id="name" [(ngModel)]="customer.name" placeholder="name" />
+  </div>
+  <hr />
+  <button (click)="save()">save</button>
+  <button (click)="goBack()">go back</button>
+</div>
+
+<!-- From CustomersComponent -->
+<!-- <div>
+  <label id="new-customer">Customer name: </label>
+  <input for="new-customer" #customerName />
+  <button
+    class="add-button"
+    (click)="add(customerName.value); customerName.value = ''"
+  >
+    Add customer
+  </button>
+</div> -->
