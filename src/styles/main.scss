@@ -1,0 +1,22 @@
+// Customize
+
+$custom-body-background-color: #f4f4f4;
+
+//  Unify Bootstrap and AG Grid styling
+
+$shared-base-font-size: 0.875rem;
+$shared-table-head-font-size: 0.815rem;
+$shared-table-head-font-weight: 700;
+$shared-table-head-background-color: #e4e4e4;
+$shared-table-stripe-background-color: #fafafa;
+$shared-table-border-color: #f0f0f0;
+$shared-container-border-color: #d9d9d9;
+$shared-container-border-radius: 0.25rem;
+$shared-cell-horizontal-padding: 18px; // must set in px!
+
+$shared-cell-height: 30px;
+
+// Arbitrary values end here
+
+@import './mutate-bootstrap';
+@import './mutate-ag-grid';

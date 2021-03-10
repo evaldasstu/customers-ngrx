@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ActivatedRoute } from '@angular/router';
-
 import { Location } from '@angular/common';
 
 import { Customer } from '../customer';
@@ -14,11 +12,10 @@ import { CustomerService } from '../customer.service';
 export class CustomerDetailComponent implements OnInit {
   customer: Customer;
   constructor(
-    private route: ActivatedRoute,
+    public route: ActivatedRoute,
     private customerService: CustomerService,
     private location: Location
   ) {
-    // For strict compiling
     this.customer = {} as Customer;
   }
 
@@ -46,13 +43,13 @@ export class CustomerDetailComponent implements OnInit {
   //     });
   // }
 
-  save(): void {
-    this.customerService
-      .updateCustomer(this.customer)
-      .subscribe(() => this.goBack());
-  }
+  // save(): void {
+  //   this.customerService
+  //     .updateCustomer(this.customer)
+  //     .subscribe(() => this.goBack());
+  // }
 
-  goBack(): void {
-    this.location.back();
-  }
+  // goBack(): void {
+  //   this.location.back();
+  // }
 }

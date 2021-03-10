@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { GridOptions, ICellRendererParams } from 'ag-grid-community';
 import { CoordinatesCellRendererComponent } from './coordinates-cell-renderer.component';
 import { ActionsCellRendererComponent } from './actions-cell-renderer.component';
@@ -13,12 +13,6 @@ export class GridComponent {
 
   constructor(private customerService: CustomerService) {
     this.gridOptions = {
-      defaultColDef: {
-        sortable: true,
-        filter: true,
-        resizable: true,
-      },
-
       columnDefs: [
         { field: 'name', headerName: 'Full name', minWidth: 160 },
         {
@@ -29,8 +23,8 @@ export class GridComponent {
         },
         { field: 'city' },
         { field: 'street' },
-        { field: 'house', maxWidth: 120, type: 'numericColumn' },
-        { field: 'zip', maxWidth: 120, type: 'numericColumn' },
+        { field: 'house', maxWidth: 120, type: 'rightAligned' },
+        { field: 'zip', maxWidth: 110, type: 'rightAligned' },
         {
           field: 'coordinates',
           sortable: false,
@@ -44,9 +38,19 @@ export class GridComponent {
           sortable: false,
           filter: false,
           minWidth: 140,
+          maxWidth: 140,
+          type: 'rightAligned',
           cellRendererFramework: ActionsCellRendererComponent,
         },
       ],
+
+      defaultColDef: {
+        sortable: true,
+        filter: true,
+        resizable: true,
+      },
+
+      pagination: true,
 
       // might need (from rxjs example)
       // https://www.ag-grid.com/angular-grid/immutable-data/
@@ -57,6 +61,8 @@ export class GridComponent {
       // },
 
       onGridReady(params): void {
+        // Probably change to first data loaded
+        // Also, sometimes doesn't work well on back
         params.api.sizeColumnsToFit();
         window.onresize = () => {
           params.api.sizeColumnsToFit();

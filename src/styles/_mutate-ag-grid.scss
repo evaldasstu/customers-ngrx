@@ -1,0 +1,34 @@
+// Customize
+
+$ag-custom-params: (
+  font-size: $shared-table-head-font-size,
+  header-background-color: $shared-table-head-background-color,
+  odd-row-background-color: $shared-table-stripe-background-color,
+  secondary-border-color: $shared-table-border-color,
+  border-color: $shared-container-border-color,
+  cell-horizontal-padding: $shared-cell-horizontal-padding,
+);
+
+// Import
+
+@import '../../node_modules/ag-grid-community/dist/styles/ag-grid.css';
+@import '../../node_modules/ag-grid-community/dist/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin';
+.ag-theme-alpine {
+  @include ag-theme-alpine(
+    map-merge($ag-theme-alpine-default-params, $ag-custom-params)
+  );
+}
+
+// Override
+
+.ag-theme-alpine .ag-header-row {
+  font-weight: $shared-table-head-font-weight;
+}
+
+.ag-theme-alpine .ag-row {
+  font-size: $shared-base-font-size;
+}
+
+.ag-layout-normal {
+  border-radius: $shared-container-border-radius;
+}

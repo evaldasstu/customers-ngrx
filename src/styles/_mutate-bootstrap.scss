@@ -1,0 +1,32 @@
+// Customize
+
+$body-bg: $custom-body-background-color;
+$font-size-base: $shared-base-font-size;
+$card-cap-bg: $shared-table-head-background-color;
+$table-accent-bg: $shared-table-stripe-background-color;
+$table-border-color: $shared-table-border-color;
+$card-border-color: $shared-container-border-color;
+$border-radius: $shared-container-border-radius;
+$table-striped-order: even;
+$card-spacer-x: $shared-cell-horizontal-padding;
+
+// Import
+
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+// Override
+
+.card-header {
+  font-size: $shared-table-head-font-size;
+  font-weight: $shared-table-head-font-weight;
+  height: 48px;
+}
+
+.table td {
+  padding-left: $shared-cell-horizontal-padding;
+  padding-right: $shared-cell-horizontal-padding;
+}
+
+.table tr:first-child td {
+  border-top: 0;
+}
