@@ -37,6 +37,7 @@ export class InMemoryDataService implements InMemoryDbService {
         city: '',
         zip: '35000',
         coordinates: [25.26379072264602, 54.698433832952944],
+        friendlyCoordinates: '25.2637, 54.6984',
       },
       {
         id: 3,
@@ -77,6 +78,7 @@ export class InMemoryDataService implements InMemoryDbService {
         city: '',
         zip: '35000',
         coordinates: [25.26379072264602, 54.698433832952944],
+        friendlyCoordinates: '25.2637, 54.6984',
       },
       {
         id: 5,

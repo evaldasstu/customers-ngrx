@@ -7,4 +7,5 @@ export interface Customer {
   city: string;
   zip: string;
   coordinates: number[];
+  friendlyCoordinates: string;
 }

@@ -1,8 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { GridOptions, ICellRendererParams } from 'ag-grid-community';
-import { CoordinatesCellRendererComponent } from './coordinates-cell-renderer.component';
-import { ActionsCellRendererComponent } from './actions-cell-renderer.component';
-import { CustomerService } from '../customer.service';
+import { CellRendererCoordinatesComponent } from './cell-renderer-coordinates.component';
+import { CellRendererActionsComponent } from './cell-renderer-actions.component';
+import { CustomerService } from '../../shared/customer.service';
 
 @Component({
   selector: 'app-grid',
@@ -26,12 +26,12 @@ export class GridComponent {
         { field: 'house', maxWidth: 120, type: 'rightAligned' },
         { field: 'zip', maxWidth: 110, type: 'rightAligned' },
         {
-          field: 'coordinates',
+          field: 'friendlyCoordinates',
+          headerName: 'Coordinates',
           sortable: false,
           filter: false,
           type: 'numericColumn',
-          valueFormatter: this.coordinatesFormatter,
-          cellRendererFramework: CoordinatesCellRendererComponent,
+          cellRendererFramework: CellRendererCoordinatesComponent,
         },
         {
           headerName: '',
@@ -40,7 +40,7 @@ export class GridComponent {
           minWidth: 140,
           maxWidth: 140,
           type: 'rightAligned',
-          cellRendererFramework: ActionsCellRendererComponent,
+          cellRendererFramework: CellRendererActionsComponent,
         },
       ],
 

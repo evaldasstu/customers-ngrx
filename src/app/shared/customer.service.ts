@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
@@ -21,6 +20,8 @@ export class CustomerService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
+
+  // public/private VVVVV ?
 
   getCustomers(): Observable<Customer[]> {
     return this.http.get<Customer[]>(this.customersUrl).pipe(
@@ -71,6 +72,7 @@ export class CustomerService {
   /** Log a CustomerService message with the MessageService */
   private log(message: string): void {
     this.messageService.add(`CustomerService: ${message}`);
+    // this.messageService.add({type: 'success', text: message});
   }
 
   /**
@@ -81,8 +83,6 @@ export class CustomerService {
    */
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      console.error(error); // temp
-
       // to improve
       this.log(`${operation} failed: ${error.message}`);
 

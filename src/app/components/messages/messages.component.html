@@ -1,0 +1,18 @@
+<!-- <div *ngIf="messageService.messages.length">
+  <button class="clear" (click)="messageService.clear()">Clear messages</button>
+  <alert
+    type="info"
+    *ngFor="let message of messageService.messages"
+    [dismissible]="true"
+    class="text-truncate"
+    >{{ message }}</alert
+  >
+</div> -->
+
+<alert
+  type="info"
+  *ngIf="messageService.messages.length"
+  [dismissible]="true"
+  class="text-truncate"
+  >{{ messageService.messages[messageService.messages.length - 1] }}</alert
+>

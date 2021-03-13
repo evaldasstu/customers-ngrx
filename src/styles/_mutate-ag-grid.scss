@@ -32,3 +32,7 @@ $ag-custom-params: (
 .ag-layout-normal {
   border-radius: $shared-container-border-radius;
 }
+
+.ag-row > div:first-child {
+  font-weight: $shared-table-first-col-font-weight;
+}

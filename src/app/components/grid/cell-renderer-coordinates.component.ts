@@ -9,15 +9,15 @@ import { ICellRendererParams } from 'ag-grid-community';
     }}"
     target="_blank"
     rel="noopener noreferrer"
-    >{{ coordinatesFormatted[1] }}, {{ coordinatesFormatted[0] }}</a
+    >{{ friendlyCoordinates }}</a
   >`,
 })
-export class CoordinatesCellRendererComponent {
+export class CellRendererCoordinatesComponent {
   coordinates: number[] = [];
-  coordinatesFormatted: number[] = [];
+  friendlyCoordinates = '';
 
   agInit(params: ICellRendererParams): void {
-    this.coordinates = params.value;
-    this.coordinatesFormatted = params.valueFormatted;
+    this.coordinates = params.data.coordinates;
+    this.friendlyCoordinates = params.value;
   }
 }
