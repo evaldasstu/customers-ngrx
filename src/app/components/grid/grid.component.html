@@ -1,2 +1,7 @@
-<ag-grid-angular class="h-100 ag-theme-alpine" [gridOptions]="gridOptions">
+<ag-grid-angular
+  class="h-100 ag-theme-alpine"
+  [gridOptions]="gridOptions"
+  (gridReady)="onGridReady($event)"
+>
+  >
 </ag-grid-angular>

@@ -4,7 +4,7 @@
     type="button"
     class="close pull-right"
     aria-label="Close"
-    (click)="bsModalRef.hide()"
+    (click)="modalService.closeModal()"
   >
     <span aria-hidden="true">&times;</span>
   </button>
@@ -14,6 +14,8 @@
   >?
 </div>
 <div class="modal-footer">
-  <button class="btn btn-secondary" (click)="bsModalRef.hide()">Cancel</button>
+  <button class="btn btn-secondary" (click)="modalService.closeModal()">
+    Cancel
+  </button>
   <button (click)="onConfirm()" class="btn btn-danger">Delete customer</button>
 </div>

@@ -1,27 +1,27 @@
-<div class="row" *ngIf="customer">
-  <!-- if? -->
+<!-- Trūkumų: 0-->
+<div class="row">
   <div class="col-md-4 col-xl-3">
-    <h2 class="h3 mb-1">{{ customer.name }}</h2>
-    <!-- <div class="h5 text-black-50 mb-3">Customer details</div> -->
-    <!-- <button type="button" class="btn btn-secondary mt-2 mb-3">
-      Edit details
-    </button> -->
-    <a routerLink="/" class="d-block mb-3 flex-grow-1">&lt; Back</a>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Customer details
+        </li>
+      </ol>
+    </nav>
   </div>
-  <div class="col">
+
+  <div class="col" *ngIf="customer$ | async as customer">
     <div class="card">
       <div
         class="card-header border-0 d-flex justify-content-between align-items-center"
       >
-        <span>Customer details</span>
+        <h2 class="h4 mb-1">{{ customer.name }}</h2>
       </div>
+
       <div class="card-body p-0">
         <table class="table table-striped border-0 m-0">
           <tbody>
-            <tr>
-              <td>Full name</td>
-              <td>{{ customer.name }}</td>
-            </tr>
             <tr>
               <td>Email</td>
               <td>
@@ -30,69 +30,55 @@
                 }}</a>
               </td>
             </tr>
+
             <tr>
               <td>Street</td>
               <td>{{ customer.street }}</td>
             </tr>
+
             <tr>
-              <td>House No</td>
+              <td>House</td>
               <td>{{ customer.house }}</td>
             </tr>
+
             <tr>
               <td>City</td>
               <td>{{ customer.city }}</td>
             </tr>
+
             <tr>
               <td>Zip</td>
               <td>{{ customer.zip }}</td>
             </tr>
+
             <tr>
               <td>Coordinates</td>
-              <td>{{ customer.friendlyCoordinates }}</td>
+              <td>
+                <!-- <div *ngIf="customer.coordinates?.length">
+                  <a
+                    href="https://www.google.com/maps/place/{{
+                      customer.coordinates[1]
+                    }},{{ customer.coordinates[0] }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >{{ customer.friendlyCoordinates }}</a
+                  >
+                </div> -->
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="card-footer bg-white d-flex justify-content-end">
-        <button
-          type="button"
-          class="btn btn-secondary mr-2"
-          (click)="modalService.openCustomerForm(customer)"
-          [disabled]="isLoading"
-        >
+        <button type="button" class="btn btn-secondary mr-2">
           Edit details
         </button>
-        <button
-          class="btn btn-danger"
-          type="button"
-          (click)="modalService.openDeleteDialog(customer)"
-          [disabled]="isLoading"
-        >
-          Delete customer
-        </button>
+
+        <button class="btn btn-danger" type="button">Delete customer</button>
       </div>
     </div>
-    <!-- <button type="button" class="mt-4 btn btn-secondary">Edit details</button> -->
-    <!-- <div *ngIf="customer">
-        <hr />
-        <div>
-          <label for="name">Full name: </label>
-          <input id="name" [(ngModel)]="customer.name" placeholder="name" />
-        </div>
-        <hr />
-        <button (click)="save()">save</button>
-      </div> -->
   </div>
 </div>
 
-<!-- From CustomersComponent -->
-<!-- <div>
-  <label id="new-customer">Customer name: </label>
-  <input for="new-customer" #customerName />
-  <button
-    class="add-button"
-    (click)="add(customerName.value); customerName.value = ''"
-  >
-    Add customer
-  </button>
-</div> -->
+<!-- (click)="modalService.openCustomerForm({})"
+(click)="modalService.openDeleteDialog({})" -->

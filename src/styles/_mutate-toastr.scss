@@ -1,0 +1,13 @@
+// *** Styling for ngx-toastr ***
+
+@import '~ngx-toastr/toastr-bs4-alert';
+
+.toast-container .ngx-toastr {
+  padding: $alert-padding-y $alert-padding-x $alert-padding-y ($spacer * 3);
+  box-shadow: none;
+}
+
+.toast-bottom-right {
+  right: 1.5rem;
+  bottom: 1rem;
+}

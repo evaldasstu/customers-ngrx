@@ -1,18 +1,20 @@
+<!-- trūkumų: 0 -->
 <div class="modal-header">
-  <h4 class="modal-title" *ngIf="customer">Edit customer</h4>
-  <h4 class="modal-title" *ngIf="!customer">New customer</h4>
+  <h4 class="modal-title">
+    <ng-container *ngIf="customer.id">Edit customer</ng-container>
+    <ng-container *ngIf="!customer.id">New customer</ng-container>
+  </h4>
   <button
     type="button"
     class="close pull-right"
     aria-label="Close"
-    (click)="hideModal()"
+    (click)="modalService.closeModal()"
   >
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-<form [formGroup]="form" (ngSubmit)="submit()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="modal-body">
-    <!-- [(model)]="model" buvau uždėjęs dėl two way binding -->
     <formly-form
       [form]="form"
       [fields]="fields"
@@ -21,7 +23,11 @@
     ></formly-form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="hideModal()">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="modalService.closeModal()"
+    >
       Cancel
     </button>
     <button type="submit" class="btn btn-primary">Save customer</button>

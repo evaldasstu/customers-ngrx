@@ -1,3 +1,5 @@
+// *** Styling entry point ***
+
 // Customize
 
 $custom-body-background-color: #f4f4f4;
@@ -15,7 +17,8 @@ $shared-container-border-color: #d9d9d9;
 $shared-container-border-radius: 0.25rem;
 $shared-cell-horizontal-padding: 18px; // must set in px!
 
-// Arbitrary values end here
+// Import styles
 
 @import './mutate-bootstrap';
 @import './mutate-ag-grid';
+@import './mutate-toastr';

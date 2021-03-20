@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ICellRendererParams } from 'ag-grid-community';
+
 import { ModalService } from 'src/app/shared/modal.service';
-import { Customer } from '../../shared/customer';
+import { Customer } from '../../../store/customer.model';
 
 @Component({
   template: `<a [routerLink]="'/customer/' + customer.id">Details</a>
@@ -9,7 +10,7 @@ import { Customer } from '../../shared/customer';
       >Delete</a
     > `,
 })
-export class CellRendererActionsComponent {
+export class ActionsComponent {
   constructor(private modalService: ModalService) {
     const id = 4;
   }

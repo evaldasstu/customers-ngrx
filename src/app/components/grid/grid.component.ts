@@ -1,89 +1,125 @@
-import { Component } from '@angular/core';
-import { GridOptions, ICellRendererParams } from 'ag-grid-community';
-import { CellRendererCoordinatesComponent } from './cell-renderer-coordinates.component';
-import { CellRendererActionsComponent } from './cell-renderer-actions.component';
+import {
+  Component,
+  OnDestroy,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import { GridOptions, GridApi, GridReadyEvent } from 'ag-grid-community';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Customer } from '../../store/customer.model';
 import { CustomerService } from '../../shared/customer.service';
+import { finalize } from 'rxjs/operators';
+import { AppState } from '../../store/app.state';
+import { selectAllCustomers } from '../../store/customer.selectors';
+
+import {
+  customerGridColumnDefs,
+  customerGridDefaultColDef,
+} from './grid-column.config';
 
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GridComponent {
-  gridOptions: GridOptions;
+export class GridComponent implements OnDestroy {
+  @Input() customers = [] as Customer[];
+  @Input() selectedCustomer = {} as Customer;
+  @Output() deleted = new EventEmitter<Customer>();
+  @Output() selected = new EventEmitter<Customer>();
 
-  constructor(private customerService: CustomerService) {
-    this.gridOptions = {
-      columnDefs: [
-        { field: 'name', headerName: 'Full name', minWidth: 160 },
-        {
-          field: 'email',
-          cellRenderer: (params: ICellRendererParams) =>
-            params.data.email &&
-            `<a href="mailto:${params.data.email}">${params.data.email}</a>`,
-        },
-        { field: 'city' },
-        { field: 'street' },
-        { field: 'house', maxWidth: 120, type: 'rightAligned' },
-        { field: 'zip', maxWidth: 110, type: 'rightAligned' },
-        {
-          field: 'friendlyCoordinates',
-          headerName: 'Coordinates',
-          sortable: false,
-          filter: false,
-          type: 'numericColumn',
-          cellRendererFramework: CellRendererCoordinatesComponent,
-        },
-        {
-          headerName: '',
-          sortable: false,
-          filter: false,
-          minWidth: 140,
-          maxWidth: 140,
-          type: 'rightAligned',
-          cellRendererFramework: CellRendererActionsComponent,
-        },
-      ],
+  private gridApi = undefined as GridApi | undefined;
 
-      defaultColDef: {
-        sortable: true,
-        filter: true,
-        resizable: true,
-      },
+  public gridOptions: GridOptions = {
+    columnDefs: customerGridColumnDefs,
+    defaultColDef: customerGridDefaultColDef,
+    pagination: true,
+  };
 
-      pagination: true,
-
-      // might need (from rxjs example)
-      // https://www.ag-grid.com/angular-grid/immutable-data/
-      // immutableData: true,
-      // getRowNodeId: function (data) {
-      //   // needs to return a unique value
-      //   return data.id;
-      // },
-
-      onGridReady(params): void {
-        // Probably change to first data loaded
-        // Also, sometimes doesn't work well on back
-        params.api.sizeColumnsToFit();
-        window.onresize = () => {
-          params.api.sizeColumnsToFit();
-        };
-        customerService.getCustomers().subscribe((customers) => {
-          if (this.api) {
-            this.api.setRowData(customers);
-          }
-        });
-      },
-    } as GridOptions;
+  constructor(
+    private store: Store<AppState>,
+    private customerService: CustomerService
+  ) {
+    this.customers$ = customerService.entities$;
+    this.loading$ = customerService.loading$;
   }
 
-  coordinatesFormatter(params: ICellRendererParams): number[] {
-    return params.value.map((a: number) => a.toFixed(4));
+  customers$: Observable<Customer[]>;
+  loading$: Observable<boolean>;
+
+  byId(customer: Customer) {
+    return customer.id;
   }
 
-  // From CustomersComponent
-  // getCustomers(): void {
+  select(customer: Customer) {
+    this.selected.emit(customer);
+  }
+
+  // getCustomers(): any {
+  //   this.customerService.getCustomers().subscribe(
+  //     (customers) => (this.customers = customers),
+  //     (error) => (this.error = error)
+  //   );
+  // }
+
+  onGridReady(params: GridReadyEvent): void {
+    // this.getCustomers();
+    this.gridApi = params.api;
+
+    window.onresize = () => {
+      this.gridApi?.sizeColumnsToFit();
+    };
+
+    params.api.sizeColumnsToFit();
+    params.api.hideOverlay();
+
+    // this.store.select(selectAllCustomers).subscribe((rowData) => {
+    //   return this.gridApi?.setRowData(rowData);
+    // });
+    // this.gridApi?.setRowData(this.customers$)
+
+    // Because of a bug https://github.com/microsoft/TypeScript/issues/43053
+    // tslint:disable-next-line
+    this.customers$.subscribe((rowData) => {
+      return this.gridApi?.setRowData(rowData);
+    });
+
+    // this.gridApi?.setRowData(this.customers);
+  }
+  ngOnDestroy(): void {
+    this.gridApi = undefined;
+  }
+
+  add(customer: Customer) {
+    this.customerService.add(customer);
+  }
+
+  delete(customer: Customer) {
+    this.customerService.delete(customer);
+    this.close();
+  }
+
+  // getCustomers() {
+  //   this.loading = true;
   //   this.customerService
-  //     .getCustomers()
+  //     .getAll()
+  //     .pipe(finalize(() => (this.loading = false)))
   //     .subscribe((customers) => (this.customers = customers));
+  //   this.close();
+  // }
+
+  update(customer: Customer) {
+    this.customerService.update(customer);
+  }
+
+  close() {
+    this.selected = {} as EventEmitter<Customer>;
+  }
+
+  // ngOnInit() {
+  //   this.getCustomers();
   // }
 }

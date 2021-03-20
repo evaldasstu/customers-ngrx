@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { Customer } from '../shared/customer';
+import { Customer } from '../store/customer.model';
 import { CustomerFormComponent } from '../components/customer-form/customer-form.component';
 import { DeleteDialogComponent } from '../components/delete-dialog/delete-dialog.component';
 
@@ -29,5 +29,9 @@ export class ModalService {
       initialState,
       class: 'modal-dialog-centered',
     });
+  }
+
+  closeModal(): void {
+    this.bsModalRef.hide();
   }
 }

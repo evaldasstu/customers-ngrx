@@ -1,0 +1,414 @@
+{
+  "customer": [
+    {
+      "id": "4ascascascascacaefwes",
+      "name": "Pirmasascascasc",
+      "email": "john@sgtpeppers.org",
+      "house": "",
+      "street": "",
+      "city": "",
+      "zip": "35000",
+      "coordinates": []
+    },
+    {
+      "id": "4",
+      "name": "Grybas",
+      "email": "paul@sgtpeppers.org",
+      "house": "",
+      "street": "",
+      "city": "",
+      "zip": "0132",
+      "coordinates": []
+    },
+    {
+      "id": "1",
+      "name": "Grybas",
+      "email": "paul@sgtpeppers.org",
+      "house": "",
+      "street": "",
+      "city": "",
+      "zip": "0132",
+      "coordinates": []
+    },
+    {
+      "id": "2",
+      "name": "Ringo Doe",
+      "email": "",
+      "house": "",
+      "street": "Abbey Rd.",
+      "city": "",
+      "zip": "35000",
+      "coordinates": [
+        25.26379072264602,
+        54.698433832952944
+      ],
+      "friendlyCoordinates": "25.2637, 54.6984"
+    },
+    {
+      "id": "3",
+      "name": "George Taxman",
+      "email": "",
+      "house": "15",
+      "street": "Gedimino pr.",
+      "city": "Vilnius",
+      "zip": "3500as0",
+      "coordinates": []
+    },
+    {
+      "id": "2235",
+      "name": "Ringo Doe",
+      "email": "",
+      "house": "",
+      "street": "Abbey Rd.",
+      "city": "",
+      "zip": "35000",
+      "coordinates": [
+        25.26379072264602,
+        54.698433832952944
+      ],
+      "friendlyCoordinates": "25.2637, 54.6984"
+    },
+    {
+      "name": "sdv",
+      "id": "06589a0d-cee6-42a1-8420-2ad32c613f56"
+    },
+    {
+      "name": "sdvsd",
+      "id": "8a022eb6-d732-4aa4-992e-e7675241826a"
+    },
+    {
+      "name": "adcadv",
+      "id": "59b3fa2b-6cab-404f-ab71-4839e886aaef"
+    },
+    {
+      "id": "5",
+      "name": "Grkjybas",
+      "email": "paul@sgtpeppers.org",
+      "house": "",
+      "street": "",
+      "city": "",
+      "zip": "0132",
+      "coordinates": []
+    },
+    {
+      "id": "666",
+      "name": "Grkjybas",
+      "email": "paul@sgtpeppers.org",
+      "house": "",
+      "street": "",
+      "city": "",
+      "zip": "0132",
+      "coordinates": []
+    },
+    {
+      "id": "asxasxasx6",
+      "name": "Grkjybas",
+      "email": "paul@sgtpeppers.org",
+      "house": "",
+      "street": "",
+      "city": "",
+      "zip": "0132",
+      "coordinates": []
+    },
+    {
+      "name": "Bill",
+      "id": "Clinton"
+    },
+    {
+      "name": "as as as ",
+      "id": "492926c5-61a3-42ae-bdd2-07dfa4facb9f"
+    },
+    {
+      "name": "sdv",
+      "id": "573378c9-7882-4d8d-a733-aefb641136c5"
+    },
+    {
+      "name": "sfb",
+      "id": "11e473d0-b2ee-4c40-b64a-f4b56779d78f"
+    },
+    {
+      "name": "sdvsdv",
+      "id": "0a0e5dfa-bb05-41f7-aa9d-92bbb2025aa7"
+    },
+    {
+      "name": "ad",
+      "id": "ae7f375e-cded-4a4e-9bdc-5507e1f66a0e"
+    },
+    {
+      "name": "sd",
+      "id": "d74f6e14-c047-4c25-84a8-cd5f92c541e4"
+    },
+    {
+      "name": "sdvsdv",
+      "id": "0c9eabf4-b99f-4fd9-b38e-c42d7b2003ce"
+    },
+    {
+      "name": "sdvsdvsdv",
+      "id": "a0dfa3a3-6e95-4662-9ce6-cfe8ece0c706"
+    },
+    {
+      "name": "sdv",
+      "id": "ed16900f-8f7f-4ec1-97f2-64f0b6642959"
+    },
+    {
+      "name": "d",
+      "id": "2f091ea0-cb42-4ddf-9c79-f4caf16bd701"
+    },
+    {
+      "name": "s",
+      "id": "b6d7752b-3e45-46d5-99ba-f0c0f355b418"
+    },
+    {
+      "name": "acs",
+      "id": "61733f52-6a49-43f9-b0bd-67db2928ca21"
+    },
+    {
+      "name": "sdvasc",
+      "id": "c64e8d71-31cf-4c69-8baf-8856c3472d02"
+    },
+    {
+      "name": "svd",
+      "id": "5370bec8-5088-4aac-aee8-707113b54e07"
+    },
+    {
+      "name": "sdv",
+      "id": "a423c274-228a-4f66-9fe3-35b47dd8fa6f"
+    },
+    {
+      "name": "svd",
+      "id": "5efa1499-9a47-4967-b7d3-c8db681a6d59"
+    },
+    {
+      "name": "sf",
+      "id": "a055e27a-3aa8-4d18-b2a4-6a102ea5acea"
+    },
+    {
+      "name": "sdv",
+      "id": "9d8b7797-c16d-4fd4-bde0-3686f520ac60"
+    },
+    {
+      "name": "sd",
+      "id": "cc1a5a88-4e99-4ef8-8fe8-af8d18b18146"
+    },
+    {
+      "name": "sdvsdv",
+      "id": "f62c1062-f2a0-4337-8e2f-b2b1fe4125fe"
+    },
+    {
+      "name": "sdvsdv",
+      "id": "65c23d32-fd96-4133-af81-a935636178f6"
+    },
+    {
+      "name": "ascas",
+      "id": "73526ddf-e8ee-4d8b-baa8-7503d28e8cdb"
+    },
+    {
+      "name": "sss",
+      "id": "ee9fe319-c3da-4b01-bfba-5fdf437f28c2"
+    },
+    {
+      "name": "sds",
+      "id": "2c3181ab-b93c-4521-9e2c-3abeabd109f0"
+    },
+    {
+      "name": "adv",
+      "id": "89680a8d-92c8-48c5-9f3f-2ccced1b0168"
+    },
+    {
+      "name": "Bidonas",
+      "id": "6e55c41c-bf8c-4db1-82ac-33a227b67edf"
+    },
+    {
+      "name": "sdvsdv",
+      "id": "9fea65b1-740a-4146-a587-d19953a16c9d"
+    },
+    {
+      "name": "Grėblys",
+      "id": "f02a848d-e2e0-471e-8ecf-112064d78823"
+    },
+    {
+      "name": "kopūstas",
+      "id": "50d836dd-508c-4fdf-8b11-be5893167509"
+    },
+    {
+      "name": "Arbūzas",
+      "id": "16ce517a-aa3c-4f53-b532-92f4e5029d33"
+    },
+    {
+      "name": "dvsdv",
+      "id": "b59293ec-4b71-4fc1-b51e-4eded37c2c58"
+    },
+    {
+      "name": "ascs",
+      "id": "5d82f4a6-a56e-4ca8-9452-502b4fa21148"
+    },
+    {
+      "name": "sdsdv",
+      "id": "cafe4154-2b5e-4c83-99e7-581db314b624"
+    },
+    {
+      "name": "wegwefgwegf",
+      "id": "0069339d-e2d2-4620-8b87-4267e5593866"
+    },
+    {
+      "name": "asas",
+      "id": "b3c6222c-2644-42a4-b1c6-fc3c28011eb4"
+    },
+    {
+      "name": "sd",
+      "id": "59146021-2fc6-42df-b877-57d5185d1c56"
+    },
+    {
+      "name": "sdvsdv",
+      "id": "cd95e1b5-1e66-4fd4-8612-eae7ee08077f"
+    },
+    {
+      "name": "ascas",
+      "id": "6f49ad82-ebb8-41c3-b0dd-537bae966330"
+    },
+    {
+      "name": "ascasc",
+      "id": "79e11aa4-ed22-4014-8688-83aaf1dab5ad"
+    },
+    {
+      "name": "sdvsdv",
+      "id": "98182a94-9a66-463e-a2b4-30ca87bc2e25"
+    },
+    {
+      "name": "ghgfhg",
+      "id": "d55ae59c-8268-4afe-b1b3-e8c7fb9f133b"
+    },
+    {
+      "name": "ascasc",
+      "id": "a6fab92b-5a64-487e-a6d4-1aabdfe20ce8"
+    },
+    {
+      "name": "ascasc",
+      "id": "4f2b1cb6-893f-4fe4-bbee-8f3340b8b358"
+    },
+    {
+      "name": "ascascasc",
+      "id": "0edc1a4b-aa24-41f6-8303-45ae15010c1b"
+    },
+    {
+      "name": "ascasc",
+      "id": "2ea242d7-ea3e-421d-b120-aa129d175d41"
+    },
+    {
+      "name": "ascascasc",
+      "id": "83f14371-62dc-4e71-8cba-c55ca7b5ef14"
+    },
+    {
+      "name": "ascascascasc",
+      "id": "c53dfb5b-b391-403e-bd96-6d65fa0ec802"
+    },
+    {
+      "name": "ascasasv",
+      "id": "08d94a42-ab07-46cc-99a1-324d906c340b"
+    },
+    {
+      "name": "wc",
+      "id": "3e039add-864a-440b-abb1-098822685895"
+    },
+    {
+      "name": "wec",
+      "id": "4f64aeb6-1382-4224-8b38-2aa074ea5ddb"
+    },
+    {
+      "name": "wec",
+      "id": "e06e4f4b-1d7d-4fa1-9ad3-89ca8b3a08e3"
+    },
+    {
+      "name": "sdv",
+      "id": "4b850105-1333-4799-b5cf-de7a694b4104"
+    },
+    {
+      "name": "asc",
+      "id": "j2N3AO_"
+    },
+    {
+      "name": "ascasc",
+      "id": "63nGu4V"
+    },
+    {
+      "name": "asc",
+      "id": "183f1b77-6de2-41de-8c8c-e7371b64a35f"
+    },
+    {
+      "name": "asc",
+      "id": "04db2919-54a1-424d-8bb6-325e8842ef5f"
+    },
+    {
+      "name": "asc",
+      "id": "422cb177-08fd-4861-8702-cf3cd1c9eac0"
+    },
+    {
+      "name": "asdasd",
+      "id": "72fcce95-a30d-4b86-b067-1efcb42bb26b"
+    },
+    {
+      "name": "asc",
+      "id": "d75da613-5206-4b8c-95ff-1f3638e29d71"
+    },
+    {
+      "name": "wve",
+      "id": "ac900fbb-5c2e-40ce-8e8f-f96a8c789fdc"
+    },
+    {
+      "name": "asc",
+      "id": "6e712ff4-ca96-4ea1-a3a5-fc384e2bfc55"
+    },
+    {
+      "name": "qef",
+      "id": "2d4d5528-788a-4995-a8ca-29d0169c8451"
+    },
+    {
+      "name": "asxasc",
+      "id": "09e97ed1-0999-4bd3-80e0-4e8adb33969c"
+    },
+    {
+      "name": "asc",
+      "id": "343b8d97-a4c7-464a-ad2e-ae15f7c58b93"
+    },
+    {
+      "name": "sac",
+      "id": "7ec677f4-6bb4-42f7-923a-cbad392202e9"
+    },
+    {
+      "name": "ascasc",
+      "id": "ed2dbbb2-e1fa-42ac-b073-f1cece6cd56a"
+    },
+    {
+      "name": " `  `x ",
+      "id": "63dc96e1-86c0-42a9-83fd-51ef496a838c"
+    },
+    {
+      "name": "advavd",
+      "id": "b2671aa9-d268-46fc-ace8-87865ad39513"
+    },
+    {
+      "name": "Blynai",
+      "id": "b3b47831-8ef9-4dd3-ac5b-45507e183b96"
+    },
+    {
+      "name": "advadv",
+      "id": "aa1719d3-4630-45a3-b13a-c375476c8068"
+    },
+    {
+      "name": "ab",
+      "id": "e2442793-1feb-4b1f-aeba-9fe23702254c"
+    },
+    {
+      "name": "asc",
+      "id": "RRaS-Xc"
+    },
+    {
+      "name": "ascascascasc",
+      "id": "90ZVqR6"
+    },
+    {
+      "name": "ascascascasc",
+      "id": "wSnSHg8"
+    }
+  ]
+}

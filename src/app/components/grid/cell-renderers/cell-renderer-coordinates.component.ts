@@ -12,12 +12,14 @@ import { ICellRendererParams } from 'ag-grid-community';
     >{{ friendlyCoordinates }}</a
   >`,
 })
-export class CellRendererCoordinatesComponent {
+export class CoordinatesComponent {
   coordinates: number[] = [];
   friendlyCoordinates = '';
 
   agInit(params: ICellRendererParams): void {
-    this.coordinates = params.data.coordinates;
-    this.friendlyCoordinates = params.value;
+    if (params.value) {
+      this.coordinates = params.value;
+      this.friendlyCoordinates = params.data.friendlyCoordinates;
+    }
   }
 }

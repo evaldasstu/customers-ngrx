@@ -1,0 +1,55 @@
+<div class="control-panel">
+  <div class="button-panel">
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="getCustomers()"
+      matTooltip="Refresh the customers"
+    >
+      Refresh
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="enableAddMode()"
+      *ngIf="!selected"
+      matTooltip="Add a new customer"
+    >
+      Add
+    </button>
+  </div>
+</div>
+<div class="content-container">
+  <div class="list-container">
+    <div *ngIf="customers$ | async as customers">
+      <div
+        *ngIf="loading$ | async; else customerList"
+        mode="indeterminate"
+        color="accent"
+      >
+        Spinner
+      </div>
+
+      <ng-template #customerList>
+        <app-grid
+          [customers]="customers"
+          [selectedCustomer]="selected"
+          (deleted)="delete($event)"
+          (selected)="select($event)"
+        ></app-grid>
+      </ng-template>
+    </div>
+  </div>
+  <div class="customer-form">
+    <app-customer-form
+      *ngIf="selected"
+      [customer]="selected"
+      (unselect)="close()"
+      (add)="add($event)"
+      (update)="update($event)"
+    >
+    </app-customer-form>
+  </div>
+</div>

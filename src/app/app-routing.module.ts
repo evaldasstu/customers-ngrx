@@ -4,7 +4,10 @@ import { GridComponent } from './components/grid/grid.component';
 import { DetailsComponent } from './components/details/details.component';
 
 const routes: Routes = [
-  { path: '', component: GridComponent },
+  {
+    path: '',
+    component: GridComponent,
+  },
   { path: 'customer/:id', component: DetailsComponent },
 ];
 

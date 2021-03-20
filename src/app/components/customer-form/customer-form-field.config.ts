@@ -1,6 +1,8 @@
+// Form field definitions in Formly format
+
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
-export let customerFormFields: FormlyFieldConfig[] = [
+export let customerFormFieldConfig: FormlyFieldConfig[] = [
   {
     key: 'name',
     type: 'input',
