@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { Customer } from '../store/customer.model';
+import { Customer } from './customer.model';
 import { CustomerFormComponent } from '../components/customer-form/customer-form.component';
 import { DeleteDialogComponent } from '../components/delete-dialog/delete-dialog.component';
 
@@ -13,25 +13,25 @@ export class ModalService {
   bsModalRef = {} as BsModalRef;
 
   openCustomerForm(customer?: Customer): void {
-    // Tried to avoid undefined when resetting the model
+    // Pass an existing customer for editing or create a new one
     customer = customer || ({} as Customer);
     const initialState = { customer };
+
     this.bsModalRef = this.bsModalService.show(CustomerFormComponent, {
       initialState,
       class: 'modal-dialog-centered',
     });
   }
 
-  // might need to receive an array
-  openDeleteDialog(customer: Customer): void {
+  openDeleteDialog(customer?: Customer): void {
+    // if (customer) {
     const initialState = { customer };
     this.bsModalRef = this.bsModalService.show(DeleteDialogComponent, {
       initialState,
       class: 'modal-dialog-centered',
     });
-  }
-
-  closeModal(): void {
-    this.bsModalRef.hide();
+    // } else {
+    //   console.log('EVERYTHING!');
+    // }
   }
 }

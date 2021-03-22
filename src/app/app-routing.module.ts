@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GridComponent } from './components/grid/grid.component';
-import { DetailsComponent } from './components/details/details.component';
+import { CustomerGridComponent } from './components/customer-grid/customer-grid.component';
+import { CustomerDetailsComponent } from './components/customer-details/customer-details.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: GridComponent,
+    component: CustomerGridComponent,
   },
-  { path: 'customer/:id', component: DetailsComponent },
+  { path: 'customers/:id', component: CustomerDetailsComponent },
 ];
 
 @NgModule({

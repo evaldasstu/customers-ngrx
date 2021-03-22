@@ -1,4 +1,4 @@
-// Form field definitions in Formly format
+// Form field definitions in ngx-formly format
 
 import { FormlyFieldConfig } from '@ngx-formly/core';
 

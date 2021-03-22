@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// gal biški čia ne vieta?
 import { ModalService } from '../../shared/modal.service';
 
 @Component({

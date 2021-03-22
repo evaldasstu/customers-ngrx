@@ -1,0 +1,7 @@
+<a [routerLink]="'/customers/' + customer.id">Details</a>
+<a
+  [routerLink]=""
+  (click)="modalService.openDeleteDialog(customer)"
+  class="ml-3 text-danger"
+  >Delete</a
+>
